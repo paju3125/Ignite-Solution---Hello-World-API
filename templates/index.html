@@ -3,52 +3,16 @@
 
 <head>
     <title>Ignite - Hello World API</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            font-weight: 700;
-        }
-        
-        h1 {
-            color: #333;
-            font-weight: 700;
-        }
-        
-        #language-form {
-            margin: 20px;
-        }
-        
-        #language {
-            width: 120px;
-        }
-        
-        #get-message {
-            margin-left: 10px;
-        }
-        
-        #message {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #007bff;
-            /*border: 1px solid #ccc;
-            background-color: #f9f9f9;*/
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
+    <!-- Link to bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- Link to custom js -->
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
 
 </head>
-
-
 
 <body>
     <div class="container mt-5">
@@ -71,18 +35,12 @@
         <div id="message"></div>
     </div>
 
+    <!-- Link to bootstrap cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script>
-        /* Send the "get" request to the "hello api" by passing language as an argument */
-        document.getElementById('get-message').addEventListener('click', async() => {
-            const selectedLanguage = document.getElementById('language').value;
-            const response = await fetch(`http://localhost:5000/hello?language=${selectedLanguage}`);
-            const data = await response.json();
 
-            /* Displaying the message on the web page */
-            document.getElementById('message').innerText = data.msgText;
-        });
-    </script>
+    <!-- Link to custom js -->
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
 </body>
 
 </html>
