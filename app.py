@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
-# User homepage for selecting language and making get request using without reloading page
+# User homepage for selecting language and making get request without reloading page
 @app.route('/')
 def homePage():
     return render_template('index.html')
@@ -11,10 +11,10 @@ def homePage():
 @app.route('/hello', methods=['GET'])
 def hello_world_api():
     
-    # Accepting the language input from get request
+    # Accepting the language input from get request (default - None)
     language = request.args.get('language', None)
     
-    # If language parameter is not passed as argument
+    # If language parameter is not passed by argument
     if language is None:
         error_response = {
             "error_message": "Language parameter is required"
