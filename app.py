@@ -4,12 +4,12 @@ app = Flask(__name__)
 
 # User homepage for selecting language and making get request using without reloading page
 @app.route('/')
-def index():
+def homePage():
     return render_template('index.html')
 
 # hello api
 @app.route('/hello', methods=['GET'])
-def hello_world():
+def hello_world_api():
     
     # Accepting the language input from get request
     language = request.args.get('language', None)
