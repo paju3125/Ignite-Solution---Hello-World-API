@@ -33,3 +33,14 @@ https://prajval.pythonanywhere.com/
 ```bash
   Click on - http://localhost:5000
 ```
+
+### API can be tested manually by modifying URL as well
+#### Try following ways to check JSON responses
+https://prajval.pythonanywhere.com/hello?language=hindi <br/>
+https://prajval.pythonanywhere.com/hello?language=french <br/>
+https://prajval.pythonanywhere.com/hello?language=english <br/>
+
+#### Some wrong requests
+https://prajval.pythonanywhere.com/hello?language=bengali <br/>
+https://prajval.pythonanywhere.com/hello
+
